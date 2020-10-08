@@ -8,4 +8,6 @@ public interface IAccountService {
     Account findAccountById(Long id);
 
     List<Account> getAccounts();
+
+    Account createAccount();
 }

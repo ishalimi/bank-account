@@ -58,13 +58,19 @@ public class AccountController {
         return new ResponseEntity(account.getHistory(), HttpStatus.OK);
     }
 
-    @GetMapping ("/accounts/{id}")
-    public ResponseEntity<AccountState> accountState (@PathVariable("id") Long id){
+    @GetMapping("/accounts/{id}")
+    public ResponseEntity<AccountState> accountState(@PathVariable("id") Long id) {
         Account account = accountService.findAccountById(id);
         AccountState accountState = new AccountState(account.getId(), new Date(), account.getBalance());
         if (account == null) {
             return new ResponseEntity(HttpStatus.NOT_FOUND);
         }
         return new ResponseEntity<AccountState>(accountState, HttpStatus.OK);
+    }
+
+    @PostMapping("/accounts")
+    public ResponseEntity<Account> createAccount() {
+        Account account = accountService.createAccount();
+        return new ResponseEntity(account, HttpStatus.OK);
     }
 }

@@ -10,12 +10,12 @@ public class Account {
     private static Long accountId;
     private List<AccountOperation> history;
 
-    static  {
+    static {
         accountId = 1L;
     }
 
     public Account() {
-        this.id= accountId++;
+        this.id = accountId++;
         this.history = new ArrayList();
     }
 

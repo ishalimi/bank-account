@@ -10,7 +10,7 @@ public class AccountOperation {
     private double balance;
     private OperationStatus operationStatus;
 
-    public AccountOperation(OperationType operationType, Date operationDate, double amount, double balance,OperationStatus operationStatus) {
+    public AccountOperation(OperationType operationType, Date operationDate, double amount, double balance, OperationStatus operationStatus) {
         this.operationType = operationType;
         this.operationDate = operationDate;
         this.amount = amount;

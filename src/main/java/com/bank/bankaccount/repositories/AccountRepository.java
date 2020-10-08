@@ -28,4 +28,11 @@ public class AccountRepository implements IAccountRepository {
     public List<Account> getAccounts() {
         return accounts;
     }
+
+    @Override
+    public Account createAccount() {
+        Account account = new Account();
+        accounts.add(account);
+        return account;
+    }
 }

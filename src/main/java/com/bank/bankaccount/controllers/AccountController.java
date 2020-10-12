@@ -13,8 +13,11 @@ import java.util.Map;
 
 @RestController
 public class AccountController {
-    @Autowired
-    IAccountService accountService;
+    private final IAccountService accountService;
+
+    public AccountController(IAccountService accountService) {
+        this.accountService = accountService;
+    }
 
     @PostMapping("/accounts/deposit/{id}")
     public ResponseEntity<AccountOperation> moneyDeposit(@PathVariable("id") Long id, @RequestBody Map<String, String> data) {
